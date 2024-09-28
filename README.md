@@ -17,6 +17,7 @@ Formulated and solved with fixed and transportation costs, considering both MIP 
 Linear Assignment Problem (LAP)
 Modeled as a classical LAP with a small instance (6 tasks and 6 people), solved using integer programming.
 
+
 Methodology
 Branch-and-Bound: Utilized to explore the solution space efficiently for NP-hard problems.
 Linear Programming Relaxations: Used to approximate solutions by relaxing integer constraints and comparing computational performance.
