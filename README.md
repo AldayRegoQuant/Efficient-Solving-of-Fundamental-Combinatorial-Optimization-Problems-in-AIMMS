@@ -32,7 +32,7 @@ The following combinatorial optimization problems were solved:
 
 ## Files Included
 
-- **AIMMS Project Files**: Four project folders, each corresponding to one of the exercises.
+- **AIMMS Project Files**: Four project folders, each corresponding to one of the problems.
 - **Solution Files**: Generated solutions from AIMMS for each of the problems tackled, included in the repository.
 
 ## How to Run
