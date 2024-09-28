@@ -1,0 +1,11 @@
+﻿There is 111.352 Mb in use.
+The root sets in the domain of constraint "Constraintsh" do not match the domain sets in case file C:\Users\rafae\OneDrive\Documentos\Aimms\CombinatorialOptExercise1 - Small\data\CombExercise1DataLarge.data. Only if elements exist in the new domain, the data will be read.
+
+The root sets in the domain of parameter "Matrix" do not match the domain sets in case file C:\Users\rafae\OneDrive\Documentos\Aimms\CombinatorialOptExercise1 - Small\data\CombExercise1DataLarge.data. Only if elements exist in the new domain, the data will be read.
+
+The root sets in the domain of parameter "VectorOne" do not match the domain sets in case file C:\Users\rafae\OneDrive\Documentos\Aimms\CombinatorialOptExercise1 - Small\data\CombExercise1DataLarge.data. Only if elements exist in the new domain, the data will be read.
+
+The root sets in the domain of parameter "C" do not match the domain sets in case file C:\Users\rafae\OneDrive\Documentos\Aimms\CombinatorialOptExercise1 - Small\data\CombExercise1DataLarge.data. Only if elements exist in the new domain, the data will be read.
+
+The root sets in the domain of variable "X" do not match the domain sets in case file C:\Users\rafae\OneDrive\Documentos\Aimms\CombinatorialOptExercise1 - Small\data\CombExercise1DataLarge.data. Only if elements exist in the new domain, the data will be read.
+
