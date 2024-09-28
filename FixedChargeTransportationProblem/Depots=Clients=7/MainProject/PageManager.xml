@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<PageManager>
+	<Page Name="All Data Pages" PageGUID="5D2C3307-7413-4E22-ADEA-077CB01C3DB1">
+		<Page Name="[Data Page] TotalCost" PageGUID="11A03DFD-6C2A-4682-8CDA-1AFE7D662F8D" />
+	</Page>
+</PageManager>

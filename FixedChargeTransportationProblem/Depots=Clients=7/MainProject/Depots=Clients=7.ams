@@ -1,0 +1,112 @@
+## ams_version=1.0
+
+Model CombinatorialOptimizationExercise2 {
+	Set Depots {
+		Index: i;
+		Definition: {
+			{1..7}
+		}
+	}
+	Set Clients {
+		Index: j;
+		Definition: {
+			{1..7}
+		}
+	}
+	Parameter Supply {
+		IndexDomain: i;
+	}
+	Parameter Demand {
+		IndexDomain: j;
+	}
+	Parameter FixedCosts {
+		IndexDomain: (i,j);
+	}
+	Variable Y {
+		IndexDomain: (i,j);
+		Range: binary;
+	}
+	Variable X {
+		IndexDomain: (i,j);
+		Range: nonnegative;
+	}
+	Variable TotalCost {
+		Range: free;
+		Definition: sum[i, sum[j, FixedCosts(i,j) * Y(i,j)]];
+	}
+	Constraint SupplyConstraint {
+		IndexDomain: i;
+		Definition: sum[j, X(i,j)] <= Supply(i);
+	}
+	Constraint DemandConstraint {
+		IndexDomain: j;
+		Definition: sum[i, X(i,j)] >= Demand(j);
+	}
+	Constraint TransportConstraint {
+		IndexDomain: (i,j);
+		Definition: X(i,j) <= Min(Supply(i), Demand(j)) * Y(i,j);
+	}
+	MathematicalProgram Minimizesh {
+		Objective: TotalCost;
+		Direction: minimize;
+		Constraints: AllConstraints;
+		Variables: AllVariables;
+		Type: MIP;
+	}
+	Procedure MainInitialization {
+		Comment: "Add initialization statements here that do NOT require any library being initialized already.";
+	}
+	Procedure PostMainInitialization {
+		Comment: {
+			"Add initialization statements here that require that the libraries are already initialized properly,
+			or add statements that require the Data Management module to be initialized."
+		}
+	}
+	Procedure MainExecution {
+		Body: {
+			solve Minimizesh where time_limit := 300;
+			showprogresswindow;
+			if (Minimizesh.ProgramStatus <> 'Optimal') then
+				empty X, Y, TotalCost;
+			endif;
+		}
+	}
+	Procedure PreMainTermination {
+		Body: {
+			return DataManagementExit();
+		}
+		Comment: {
+			"Add termination statements here that require all libraries to be still alive.
+			Return 1 if you allow the termination sequence to continue.
+			Return 0 if you want to cancel the termination sequence."
+		}
+	}
+	Procedure MainTermination {
+		Body: {
+			return 1;
+		}
+		Comment: {
+			"Add termination statements here that do not require all libraries to be still alive.
+			Return 1 to allow the termination sequence to continue.
+			Return 0 if you want to cancel the termination sequence.
+			It is recommended to only use the procedure PreMainTermination to cancel the termination sequence and let this procedure always return 1."
+		}
+	}
+	Section Quantities_and_Units {
+		Comment: {
+			"This section contains all the units and quantities that are added automatically by AIMMS.
+			It is recommended to declare all your quantities here."
+		}
+		Quantity SI_Time_Duration {
+			BaseUnit: s;
+			Conversions: minute->s : #-># * 60;
+			Comment: {
+				"Expresses the value for the duration of periods.
+				
+				The unit s has been added automatically because it is a required unit for AimmsWebUI.
+				
+				The unit minute has been added automatically because it is a required unit for AimmsWebUI."
+			}
+		}
+	}
+}
