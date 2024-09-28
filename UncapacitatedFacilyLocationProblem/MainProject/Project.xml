@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Project AimmsVersion="24.5.8.5 unicode x64" ProjectUUID="BC08F749-2C5A-421A-8A60-F4662ADB674E">
+	<ModelFileName>CombinatorialOptExercise2.ams</ModelFileName>
+	<AutoSaveAndBackup>
+		<DataBackup AtRegularInterval="true" EveryNMinutes="15" NumBackupsDatedToday="3" NumDaysBeforeToday="3" />
+	</AutoSaveAndBackup>
+</Project>
